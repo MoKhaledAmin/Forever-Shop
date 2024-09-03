@@ -7,25 +7,26 @@ import { ShopContext } from '../context/ShopContext';
 import Title from './Title';
 import ProductItem from './ProductItem';
 
-const LatestCollection = () => {
+const BestSeller = () => {
     const { products } = useContext(ShopContext);
-    const [latestProducts, setLatestProducts] = useState([]);
+    const [bestSeller, setBestSeller] = useState([]);
 
     // Load Latest Products
     useEffect(() => {
-        setLatestProducts(products.slice(0, 10));
+        const bestProducts = products.filter((item) => item.bestseller);
+        setBestSeller(bestProducts.slice(0, 5));
     }, [products]);
 
     return (
         <React.Fragment>
             <div className='my-10'>
                 <div className='text-center py-8 text-3xl'>
-                    <Title text1={'LATEST'} text2={'COLLECTIONS'} />
+                    <Title text1={'BEST'} text2={'SELLERS'} />
                     <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quibusdam, quae temporibus iusto, sapiente cupiditate amet consectetur veniam ratione qui neque.</p>
                 </div>
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
                     {
-                        latestProducts.map((item, index) => (
+                        bestSeller.map((item, index) => (
                             <ProductItem key={index} id={item.id} image={item.image} name={item.name} price={item.price} />
                         ))
                     }
@@ -35,4 +36,4 @@ const LatestCollection = () => {
     )
 }
 
-export default LatestCollection;
+export default BestSeller;
