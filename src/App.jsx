@@ -12,6 +12,7 @@ import Orders from './pages/Orders';
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Collection from './pages/Collection';
 import PlaceOrder from './pages/PlaceOrder';
 
@@ -31,6 +32,7 @@ const App = () => {
                     <Route path='/place-order' element={<PlaceOrder />} />
                     <Route path='/product/:productId' element={<Product />} />
                 </Routes>
+                <Footer />
             </div>
         </React.Fragment>
     )
