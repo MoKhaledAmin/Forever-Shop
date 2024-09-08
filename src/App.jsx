@@ -15,12 +15,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Collection from './pages/Collection';
 import PlaceOrder from './pages/PlaceOrder';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
     return (
         <React.Fragment>
             <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
                 <Navbar />
+                <SearchBar />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/cart' element={<Cart />} />
