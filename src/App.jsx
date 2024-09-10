@@ -17,10 +17,15 @@ import Collection from './pages/Collection';
 import PlaceOrder from './pages/PlaceOrder';
 import SearchBar from './components/SearchBar';
 
+// Toast
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 const App = () => {
     return (
         <React.Fragment>
             <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+                <ToastContainer />
                 <Navbar />
                 <SearchBar />
                 <Routes>
