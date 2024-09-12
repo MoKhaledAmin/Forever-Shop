@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 // Context
 import { ShopContext } from '../context/ShopContext';
@@ -11,8 +11,8 @@ import CartTotal from '../components/CartTotal';
 import { assets } from '../assets/assets';
 
 const Cart = () => {
-    const [cartData, setCartData] = useState([]);
-    const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
+    // const [cartData, setCartData] = useState([]);
+    const { products, currency, cartItems, updateQuantity, navigate, cartData, setCartData } = useContext(ShopContext);
 
     // Handle Cart
     useEffect(() => {
@@ -29,6 +29,7 @@ const Cart = () => {
             }
         }
         setCartData(tempData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartItems]);
     
     return (
